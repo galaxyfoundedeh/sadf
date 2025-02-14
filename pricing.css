@@ -121,6 +121,87 @@
     transform: scale(1.02);
 }
 
+/* Free Trial Styles */
+.free-trial-badge {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 2rem 0;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(122,95,255,0.3);
+    animation: floatBadge 3s ease-in-out infinite;
+}
+
+.free-trial-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(122,95,255,0.4);
+}
+
+.free-trial-badge::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+/* Remove trial text and plan card badges */
+.plan-card::before,
+.trial-text {
+    display: none;
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.plan-card::before {
+    content: "14-Day Free Trial";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2ecc71;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(46,204,113,0.3);
+}
+
+.trial-text {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.trial-text i {
+    color: #2ecc71;
+    margin-right: 0.5rem;
+}
+
+@keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* FAQ Styles */
 .faq {
     max-width: 800px;
     margin: 4rem auto;
@@ -168,5 +249,10 @@
     
     .price {
         font-size: 2rem;
+    }
+    
+    .free-trial-badge {
+        font-size: 0.9rem;
+        padding: 0.8rem 1.5rem;
     }
 }
