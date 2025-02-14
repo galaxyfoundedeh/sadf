@@ -1,0 +1,172 @@
+/* Pricing Page Specific Styles */
+.pricing-hero {
+    height: 60vh;
+    background: linear-gradient(135deg, #f3f0ff, #fff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.plans {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.plan-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(122,95,255,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid transparent;
+}
+
+.plan-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(122,95,255,0.2);
+}
+
+.plan-card.pro {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.plan-card.pro:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.plan-badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: var(--accent);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.plan-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 1rem 0;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text);
+    opacity: 0.7;
+}
+
+.save-badge {
+    background: #2ecc71;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.features-list {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.features-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.features-list li:hover {
+    background: #f8f7ff;
+}
+
+.plan-cta {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 15px;
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.plan-cta:hover {
+    background: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+.faq {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 5%;
+}
+
+.faq-item {
+    background: white;
+    margin: 1rem 0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+.faq-answer p {
+    padding: 1rem 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .plans {
+        grid-template-columns: 1fr;
+    }
+    
+    .plan-card.pro {
+        transform: scale(1);
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+}
